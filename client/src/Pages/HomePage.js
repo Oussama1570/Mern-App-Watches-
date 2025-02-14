@@ -20,6 +20,20 @@ const HomePage = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
 
+
+  useEffect(() => {
+    axios
+        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/product`)
+        .then((response) => {
+            setProducts(response.data.data);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+}, []);
+
+
+
   //get all cat
   const getAllCategory = async () => {
     try {
