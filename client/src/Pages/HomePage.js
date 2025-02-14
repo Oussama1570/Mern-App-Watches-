@@ -21,16 +21,7 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
 
 
-  useEffect(() => {
-    axios
-        .get(`https://localhost:9902/product`)
-        .then((response) => {
-            setProducts(response.data.data);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
-}, []);
+ 
 
 
   //get all cat
