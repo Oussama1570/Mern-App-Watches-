@@ -23,7 +23,7 @@ const HomePage = () => {
 
   useEffect(() => {
     axios
-        .get(`${import.meta.env.VITE_REACT_APP_BACKEND_BASEURL}/product`)
+        .get(`https://localhost:9902/product`)
         .then((response) => {
             setProducts(response.data.data);
         })
@@ -31,7 +31,6 @@ const HomePage = () => {
             console.log(error);
         });
 }, []);
-
 
 
   //get all cat
